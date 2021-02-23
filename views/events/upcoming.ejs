@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+</head>
+
+<body>
+    <ul>
+        <% for (let event of events){%>
+            <div><%= event.title %></div>
+            <div><%= event.prize %></div>
+            <div><%= event.date %></div>
+        <% }%>
+    </ul>
+    <footer>
+        <a href="/events">All Events</a>
+    </footer>
+</body>
+
+</html>

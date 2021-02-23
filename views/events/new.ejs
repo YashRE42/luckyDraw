@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Event</title>
+</head>
+
+<body>
+    <form action="/events" method="POST">
+        <div>
+            <label for="title">Title</label>
+            <input type="text" id="title" name="event[title]">
+        </div>
+        <div>
+            <label for="title">Prize</label>
+            <input type="text" id="prize" name="event[prize]">
+        </div>
+        <div>
+            <label for="title">Winner</label>
+            <input type="text" id="winner" name="event[winner]">
+        </div>
+        <div>
+            <label for="location">Date</label>
+            <input type="date" id="date" name="event[date]">
+        </div>
+        <button>Add Event</button>
+    </form>
+    <a href="/events">All Events</a>
+
+</body>
+
+</html>

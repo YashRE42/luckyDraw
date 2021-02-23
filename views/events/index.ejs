@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body>
+    <h1>All Events</h1>
+    <div>
+        <a href="/events/new">Add Event</a>
+    </div>
+    <ul>
+        <% for (let event of events){%>
+        <li><a href="/events/<%= event._id %>"><%= event.title %></a></li>
+        <% }%>
+    </ul>
+
+</body>
+
+</html>

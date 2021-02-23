@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+</head>
+
+<body>
+    <h1><%= event.title %></h1>
+    <h2><%= event.prize %></h2>
+    <h2><%= event.winner %></h2>
+    <h2><%= event.date %></h2>
+    <% if (!event.winner) {%>
+    <p> <a href="/events/<%=event._id%>/pickwinner">Pick Winner</a></p>
+    <% } %>
+    <footer>
+        <a href="/events">All Events</a>
+    </footer>
+</body>
+
+</html>
