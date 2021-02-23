@@ -8,10 +8,12 @@
 </head>
 
 <body>
-    <h1><%= event.title %></h1>
-    <h2><%= event.prize %></h2>
-    <h2><%= event.winner %></h2>
-    <h2><%= event.date %></h2>
+    <p>event name: <%= event.title %></p>
+    <p>event prize: <%= event.prize %></p>
+    <% if (event.winner) {%>
+        <p>event winner: <%= event.winner %></p>
+    <% } %>
+    <p>event date: <%= event.date %></p>
     <% if (!event.winner) {%>
     <p> <a href="/events/<%=event._id%>/pickwinner">Pick Winner</a></p>
     <% } %>
