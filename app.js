@@ -52,11 +52,11 @@ app.get('/upcoming', async (req, res) => {
     let upcoming = [];
     events.forEach(event => {
         let date = new Date(event.date);
-        if (date >= today) {
+        if (date >= today && !event.winner) {
             upcoming.push(event);
         }
     });
-    res.render('events/upcoming',{events:eventsWithinTheLastWeek})
+    res.render('events/upcoming',{events:upcoming})
 });
 
 app.get('/events/new', (req, res) => {
