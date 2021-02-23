@@ -76,9 +76,11 @@ app.get('/events/:id', async (req, res,) => {
 
 app.get('/events/:id/pickwinner', async (req, res) => {
     const event = await Event.findById(req.params.id);
-    const winner = await User.findById(event.participants[Math.floor(Math.random() * event.participants.length)]);
-    const updatedEvent = await Event.findByIdAndUpdate(req.params.id, {winner : winner.name});
-    res.redirect(`/events/${updatedEvent._id}`);
+    if (event.participants.length > 0) {
+        const winner = await User.findById(event.participants[Math.floor(Math.random() * event.participants.length)]);
+        const updatedEvent = await Event.findByIdAndUpdate(req.params.id, {winner : winner.name});
+    }
+    res.redirect(`/events/${event._id}`);
 })
 
 app.get('/', (req, res) => {
